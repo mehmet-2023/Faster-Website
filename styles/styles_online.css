@@ -1,0 +1,290 @@
+body {
+  background-color: #121212;
+  align-content:center;
+}
+.game{
+  width:100%;
+  align-items:center;
+  align-content:center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-top:0;
+}
+#color {
+  font-family: 'Luckiest Guy', cursive;
+  font-size:70px;
+  height:0vh;
+  color: #8acd6c;
+}
+p {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 90px;
+  line-height: 1;
+  height:0vh;
+  margin-bottom:6vh;
+  color: #eaeae5;
+}
+h2{
+  font-family: '  poppins', sans-serif;
+  font-size: 10px;
+  height:0vh;
+  color: #eaeae5;
+}
+#green{
+  width:40vh;
+  height:15vh;
+  margin-top:8vh;
+  font-family:'Poppins',sans-serif;
+  font-size:15px;
+  color:#eaeae5;
+  background-color: #8acd6c;
+  border-radius:12px;
+  border:5px solid #c47590;
+  cursor: pointer;
+}
+#yellow{
+  width:40vh;
+  height:15vh;
+  margin-top:5px;
+  font-family:'Poppins',sans-serif;
+  font-size:15px;
+  color:#eaeae5;
+  background-color: #cdc16d;
+  border-radius:12px;
+  border:5px solid #c774ca;
+  cursor: pointer;
+}
+#red{
+  width:40vh;
+  height:15vh;
+  margin-top:5px;
+  font-family:'Poppins',sans-serif;
+  font-size:15px;
+  color:#eaeae5;
+  background-color: #cd6d6e;
+  border-radius:12px;
+  border:5px solid #eaeae5;
+  cursor: pointer;
+}
+#green:active{
+  background-color: rgba(199, 199, 199, 0.764);
+}
+#yellow:active{
+  background-color: rgba(199, 199, 199, 0.764);
+}
+#red:active{
+  background-color: rgba(199, 199, 199, 0.764);
+}
+.progress-container {
+  margin-top:10px;
+  border-radius: 8px;
+  width: 40vh; /* Progress bar'ın genişliği */
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+  height: 20px; /* Progress bar'ın yüksekliği */
+}
+
+.progress-bar {
+  width: 100%;
+  border-radius: 8px;
+  height: 100%;
+  background-color: #8acd6c;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  text-align: center;
+}
+
+.dialog {
+  display:none;
+  background-color: #040404;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 40vh;
+  height:55vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.message {
+  margin-bottom: 15px;
+  font-family: "Luckiest Guy",cursive;
+  font-size:40px;
+  color:#eaeae5;
+}
+
+.closeBtn {
+  background-color: #8acd6c;
+  color: #fff;
+  border: none;
+  width:23vh;
+  height:9vh;
+  margin-top:10px;
+  border:5px solid #c47590;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.dec {
+  color: #eaeae5;
+  font-family: "Poppins",sans-serif;
+  font-size: 14px;
+}
+#powerup{
+  width:20vh;
+  height:20vh;
+}
+.title {
+  font-family: "Poppins",sans-serif;
+  font-weight: bold;
+  color:#eaeae5;
+}
+#alert {
+  padding: 20px;
+  display:none;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  background-color: #2196F3;
+}
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.cont{
+display:flex;
+}
+
+#theme{
+position:absolute;
+left:10px;
+height:10vh;
+width:10vh;
+background-color:transparent;
+border: 0;
+top:11vh;
+color: #eaeae5;
+-webkit-appearance: none;
+cursor:pointer;
+}
+#theme:active{
+background-color: rgba(199, 199, 199, 0.764);
+}
+#home{
+position:absolute;
+left:10px;
+height:10vh;
+width:10vh;
+background-color:transparent;
+border: 0;
+top:10px;
+color: #eaeae5;
+-webkit-appearance: none;
+cursor:pointer;
+}
+#home:active{
+background-color: rgba(199, 199, 199, 0.764);
+}
+#theme_menu{
+display:none;
+z-index: 1;
+background-color: #040404;
+border: 3px solid #ccc;
+border-radius: 5px;
+padding: 20px;
+width: 40vh;
+height:50vh;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+align-items: center;
+}
+.top{
+width:100%;
+display:flex;
+align-content: center;
+}
+#close{
+position: absolute;
+left:35vh;
+background-color: #cd6d6e;
+width:7vh;
+height:7vh;
+border-radius:5px;
+cursor:pointer;
+}
+.buttons{
+width:100%;
+display: block;
+justify-items: center;
+align-items: center;
+text-align: center;
+}
+#classic, #flame, #neon {
+width: 85%;
+height: 6vh;
+color: #eaeae5;
+margin-top: 10px;
+border: none;
+font-size: 1em;
+cursor: pointer;
+transition: background 0.3s ease;
+animation: gradientAnimation 3s ease infinite;
+}
+
+#classic {
+background: linear-gradient(to right, #333, #666, #333);
+background-size: 200% 100%;
+}
+
+#flame {
+background: linear-gradient(to right, #c50f04, #dfa11a, #009788);
+background-size: 200% 100%;
+}
+
+#neon {
+background: linear-gradient(to right, #fa0240, #edcc01, #34d970);
+background-size: 200% 100%;
+}
+
+#classic:active {
+background: rgba(199, 199, 199, 0.764);
+}
+
+#flame:active, #neon:active {
+background: rgba(199, 199, 199, 0.764);
+}
+
+@keyframes gradientAnimation {
+0% {
+    background-position: 0% 50%;
+}
+50% {
+    background-position: 100% 50%;
+}
+100% {
+    background-position: 0% 50%;
+}
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles_online.css">
+  <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/aed1e798-d668-4241-a8a1-4aeb8554c7c2/icon.png?v=1717840429403">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Faster - Demo</title>
+</head>
+<body>
+  <div id="theme_menu">
+    <div class="top">
+      <div class="message">THEMES</div>
+      <button id="close"><svg xmlns="http://www.w3.org/2000/svg" height="4vh" viewbox="0 -960 960 960" width="4vh" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
+    </div>
+    <hr>
+    <br>
+    <div class="buttons">
+    <button id="classic"><div class="themename">Classic Theme</div></button>
+    <button id="flame"><div class="themename">Flame Theme</div></button>
+    <button id="neon"><div class="themename">Neon Theme</div></button>
+    </div>
+    <br>
+    <hr>
+  </div>
+    <div class="container">
+        <div id="dialog" class="dialog">
+          <div id="message" class="message">POWER-UP</div>
+          <hr>
+          <div id="dec" class="dec">Bravo, you reached x points! Now you can be relaxed.</div>
+          <img id = "powerup">
+          <div class="title" id="name">Stop Timer</div>
+          <div class="dec" id="decept">Timer stops for 5 seconds.</div>
+          <button id="closeBtn" class="closeBtn">Well!</button>
+        </div>
+      </div> 
+    <div class="game">
+      <div class="cont">
+        <p id="score"><span id="skor">0</span></p>
+        <button id="home" onclick="window.location.href='index.html'"><svg xmlns="http://www.w3.org/2000/svg" height="8vh" viewbox="0 -960 960 960" width="8vh" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></button>
+        <button id="theme"><svg xmlns="http://www.w3.org/2000/svg" height="8vh" viewbox="0 -960 960 960" width="8vh" fill="#e8eaed"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80Zm0-400Zm-220 40q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120-160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm200 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120 160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM480-160q9 0 14.5-5t5.5-13q0-14-15-33t-15-57q0-42 29-67t71-25h70q66 0 113-38.5T800-518q0-121-92.5-201.5T488-800q-136 0-232 93t-96 227q0 133 93.5 226.5T480-160Z"/></svg></button>
+      </div>
+        <h1 id="color">Demo</h1>
+        <button id="green">GREEN</button>
+        <button id="yellow">YELLOW</button>
+        <button id="red">RED</button>
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+        <h2>The demo version does not show the quality of the game. Click a button that contains a color other than the specified color.</h2>
+    </div> 
+    <br>
+    <div id="alert">
+        <span class="closebtn">&times;</span>  
+        <strong>Info!</strong> Shield has been broken.
+      </div>
+</body>
+<script src="scripts/online.js"></script>
+</html>

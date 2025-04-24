@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/aed1e798-d668-4241-a8a1-4aeb8554c7c2/icon.png?v=1717840429403">
+  <title>Faster - Renklerin Dansına Kapıl</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="styles/styles.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Faster</h1>
+    <nav>
+      <a href="#features">Özellikler</a>
+      <a href="demo.html">Demo</a>
+      <a href="#hero">İndir</a>
+    </nav>
+  </header>
+
+  <section id="hero" class="hero">
+    <h2>Renklerin Dansına Kapıl!</h2>
+    <p>Reflekslerini test et, rekabetin zirvesine tırman ve renklerin akışında hızını konuştur. Faster ile şimdi tanış!</p>
+
+    <div class="video-wrapper">
+      <video controls src="reklam_yatay.mp4"></video>
+    </div>
+
+    <div class="buttons">
+      <button class="btn btn-yellow">APK İndir</button>
+      <button class="btn btn-green">Play Store</button>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="feature-card">
+      <h3>Refleks Testi</h3>
+      <p>Hızlı düşün, hızlı tıkla. El-göz koordinasyonunu geliştir.</p>
+    </div>
+    <div class="feature-card">
+      <h3>30+ Puan Sonrası</h3>
+      <p>Renk algını şaşırtacak zorluk seviyeleriyle heyecan dorukta.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Demo Modu</h3>
+      <p>İlk seviyeyi ücretsiz dene ve kendini kanıtla!</p>
+    </div>
+    <div class="feature-card">
+      <h3>Power-Up'lar</h3>
+      <p>Oyunu kolaylaştıran araçlarla skorunu katla.</p>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <h2>Faster'ı Şimdi Deneyin</h2>
+    <p>Demo modu ile oyunun ilk seviyesini hemen tarayıcınızda deneyin. Hızınıza ve reflekslerinize meydan okuyun.</p>
+    <a href="demo.html" class="btn btn-demo">Tarayıcıda Oyna</a>
+  </section>
+  <section id="feedback" class="feedback">
+    <h2>Sen Ne Düşünüyorsun?</h2>
+    <form id="feedbackForm">
+      <input type="text" id="name" placeholder="Adınız" required />
+      <textarea id="comment" placeholder="Yorumunuz" required></textarea>
+      <button type="submit" class="btn btn-yellow">Gönder</button>
+    </form>
+  
+    <div id="feedbackList" class="feedback-list"></div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 Faster. Tüm hakları saklıdır. | <a href="privacy.html" style="color: var(--accent-yellow); text-decoration: none;">Gizlilik Politikası</a></p>
+  </footer>
+</body>
+<script src="scripts/script.js"></script>
+</html>
