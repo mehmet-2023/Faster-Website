@@ -285,3 +285,48 @@ footer {
   color: #777;
   background: #0f0f0f;
 }
+
+/* Başlıkları sadece hafifçe parlat */
+header h1,
+.hero h2,
+.demo-section h2,
+.feedback h2 {
+  text-shadow: 0 0 6px rgba(255, 209, 93, 0.3);
+}
+
+.feature-card h3 {
+  transition: text-shadow 0.3s;
+}
+
+.feature-card:hover h3 {
+  text-shadow: 0 0 6px rgba(255, 209, 93, 0.4);
+}
+
+.feature-card:nth-child(2):hover h3 {
+  text-shadow: 0 0 6px rgba(141, 204, 112, 0.4);
+}
+
+.feature-card:nth-child(3):hover h3 {
+  text-shadow: 0 0 6px rgba(197, 113, 117, 0.4);
+}
+
+.feature-card {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.feature-card:nth-child(1):hover {
+  box-shadow: 0 0 12px rgba(255, 209, 93, 0.3);
+}
+
+.feature-card:nth-child(2):hover {
+  box-shadow: 0 0 12px rgba(141, 204, 112, 0.3);
+}
+
+.feature-card:nth-child(3):hover {
+  box-shadow: 0 0 12px rgba(197, 113, 117, 0.3);
+}
+
+.feature-card:nth-child(4):hover {
+  box-shadow: 0 0 12px rgba(255, 209, 93, 0.3);
+}
