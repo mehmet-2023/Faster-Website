@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth-compat.js"></script>
+
+<html>
+  <head>
+    <title>Faster - Leaderboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/styles_leaderboard.css" />
+  </head>
+  <body>    
+    <h1 class="title" align="center">LEADERBOARD</h1>
+    <div class="container" id="leaderboard"></div>
+    <div id="loading-screen">
+      <h2>LOADING...</h2>
+    </div> 
+  </body>
+  <script type="module">
+    import firebaseConfig from "./credentials/config.js";
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    async function getIdToken() {
+      if (!auth.currentUser) {
+        await auth.signInAnonymously();
+      }
+      const user = auth.currentUser;
+      return await user.getIdToken();
+    }
+
+    async function getData(tag) {
+      const token = await getIdToken();
+      const res = await fetch(`scripts/get.php?tag=${encodeURIComponent(tag)}&token=${token}`);
+      const data = await res.json();
+      return data;
+    }
+
+    function createRankElement(rank, name, points) {
+  const rankDiv = document.createElement("div");
+  rankDiv.classList.add("rank");
+
+  if (rank === 1) rankDiv.id = "numberone";
+  else if (rank === 2) rankDiv.id = "numbertwo";
+  else if (rank === 3) rankDiv.id = "numberthree";
+
+  const buttonDiv = document.createElement("div");
+  buttonDiv.classList.add("button");
+  const rankP = document.createElement("p");
+  rankP.textContent = rank;
+  buttonDiv.appendChild(rankP);
+
+  const nameDiv = document.createElement("div");
+  nameDiv.classList.add("name");
+  const nameH1 = document.createElement("h1");
+  nameH1.textContent = name;
+  nameDiv.appendChild(nameH1);
+
+  const pointsDiv = document.createElement("div");
+  pointsDiv.classList.add("points");
+  const pointsH1 = document.createElement("h1");
+  pointsH1.textContent = points;
+  pointsDiv.appendChild(pointsH1);
+
+  rankDiv.appendChild(buttonDiv);
+  rankDiv.appendChild(nameDiv);
+  rankDiv.appendChild(pointsDiv);
+
+  return rankDiv;
+}
+
+
+    async function fetchUserData() {
+      const names = await getData("Users/usernames");
+      const token = await getIdToken();
+      const highscorePromises = JSON.parse(names.value).map(async (name) => {
+        const worker = new Worker("scripts/worker.js");
+
+        worker.postMessage({
+          name,
+          databaseURL: "https://faster-a2447-default-rtdb.firebaseio.com",
+          token
+        });
+
+        return new Promise((resolve) => {
+          worker.onmessage = function (event) {
+            const { name, highscore } = event.data;
+            resolve({ name, highscore });
+            worker.terminate();
+          };
+        });
+      });
+
+      const highscoreResults = await Promise.all(highscorePromises);
+      highscoreResults.sort((a, b) => b.highscore - a.highscore);
+
+      const container = document.getElementById("leaderboard");
+      highscoreResults.forEach(({ name, highscore }, index) => {
+        const element = createRankElement(index + 1, name, highscore);
+        container.appendChild(element);
+      });
+    }
+
+    fetchUserData().then(() => {
+  document.getElementById("loading-screen").style.display = "none";
+});
+  </script>
+</html>
